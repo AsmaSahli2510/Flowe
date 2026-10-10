@@ -1,6 +1,6 @@
 <div align="center">
 
-# ✦ Flowe
+#  Flowe
 
 ### A calmer space for collaborative project management.
 
