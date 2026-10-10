@@ -6,9 +6,9 @@
 
 **Plan projects · Organize tasks · Keep teams in sync**
 
-A modern, pastel-inspired workspace built with **React 19** and **Vite 6**, featuring an interactive Kanban board, task management, calendar views, team overview, files, and project analytics.
+A modern, pastel-inspired workspace , featuring an interactive Kanban board, task management, calendar views, team overview, files, and project analytics.
 
-[Explore the Figma UI](https://www.figma.com/design/mewqufFgXhYrT9434lmd18) · [Getting Started](#getting-started) · [Project Structure](#project-structure)
+[Explore the Figma UI](https://www.figma.com/design/mewqufFgXhYrT9434lmd18) 
 
 </div>
 
