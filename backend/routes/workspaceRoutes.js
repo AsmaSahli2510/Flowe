@@ -1,0 +1,17 @@
+import { Router } from "express";
+import * as workspace from "../controllers/workspaceController.js";
+import * as projects from "../controllers/projectController.js";
+import { requireAuth, objectId } from "../middleware/auth.js";
+import { workspaceAccess, ownerOnly } from "../middleware/access.js";
+const router = Router();
+router.use(requireAuth);
+router.param("workspaceId", objectId);
+router.param("projectId", objectId);
+router.route("/").get(workspace.list).post(workspace.create);
+router.use("/:workspaceId", workspaceAccess);
+router.get("/:workspaceId/members", workspace.members);
+router.post("/:workspaceId/invitations", ownerOnly, workspace.invite);
+router.post("/:workspaceId/invitations/:id/resend", ownerOnly, workspace.resend);
+router.route("/:workspaceId/projects").get(projects.list).post(projects.create);
+router.patch("/:workspaceId/projects/:projectId", projects.update);
+export default router;

@@ -6,18 +6,30 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "test": "vitest run",
+    "test:views": "node --test tests/viewData.test.mjs",
+    "test:planner": "node --test tests/plannerData.test.mjs",
+    "format": "prettier --write \"src/**/*.{js,jsx,css}\"",
+    "format:check": "prettier --check \"src/**/*.{js,jsx,css}\"",
+    "check:imports": "node scripts/check-imports.mjs"
   },
   "dependencies": {
+    "lucide-react": "^0.468.0",
+    "motion": "^14.10.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-router-dom": "^7.0.0",
-    "lucide-react": "^0.468.0"
+    "socket.io-client": "^4.8.4"
   },
   "devDependencies": {
-    "vite": "^6.1.0",
+    "@testing-library/react": "^16.3.3",
+    "@testing-library/user-event": "^14.6.9",
     "@vitejs/plugin-react": "^4.3.4",
-    "prettier": "^3.5.0"
+    "jsdom": "^26.1.0",
+    "prettier": "^3.5.0",
+    "vite": "^6.1.0",
+    "vitest": "^3.2.7"
   },
   "engines": {
     "node": ">=22.12.0"

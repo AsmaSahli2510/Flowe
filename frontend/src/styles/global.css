@@ -51,6 +51,10 @@ svg {
   flex-shrink: 0;
   stroke-width: 1.55;
 }
+img {
+  flex-shrink: 0;
+  object-fit: contain;
+}
 button {
   transition:
     background 0.15s,

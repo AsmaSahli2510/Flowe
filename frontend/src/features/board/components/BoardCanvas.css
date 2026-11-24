@@ -1,0 +1,190 @@
+/* Trello-style information density, rendered in Flowe's existing pastel palette. */
+.kb-board-scroll{flex:1;min-height:0;overflow-x:auto;overflow-y:hidden;padding:12px 13px 14px;position:relative;isolation:isolate;scrollbar-color:#a892c5 transparent}
+.kb-board-track{display:flex;align-items:flex-start;min-width:max-content;gap:12px;min-height:100%;padding-bottom:10px}
+.kb-scrolling-region,.kb-pinned-region{display:flex;align-items:flex-start;gap:12px}
+.kb-pinned-region{position:sticky;left:0;z-index:10;background:var(--fw-paper,#f9f6fb);padding:0 14px 0 0;border-radius:13px;box-shadow:7px 0 15px -14px #3b2c4f}
+.kb-pinned-divider{height:min(72vh,690px);width:2px;background:#8f79b2;opacity:.7;flex:none;margin-left:-4px}
+.kb-list{--kb-list-tint:#eeeaf0;flex:0 0 272px;width:272px;border-radius:13px;background:color-mix(in srgb,var(--kb-list-tint) 16%,#f4f2f5);border:1px solid rgba(75,54,83,.085);box-shadow:0 6px 22px #34203c12;display:flex;flex-direction:column;max-height:min(75vh,720px);min-height:80px;color:#34303b}
+.kb-list-head{min-height:43px;display:flex;align-items:center;justify-content:space-between;gap:4px;padding:6px 8px 6px 13px;cursor:grab;flex:0 0 auto}
+.kb-list-head:active{cursor:grabbing}
+.kb-head-main{display:flex;align-items:center;gap:6px;min-width:0;flex:1}
+.kb-head-main strong{font-size:13px;font-weight:700;white-space:nowrap;text-overflow:ellipsis;overflow:hidden}
+.kb-head-main svg{flex:0 0 auto;color:#756686}
+.kb-count{margin-left:auto;font-size:12px;color:#776d7b;font-variant-numeric:tabular-nums;padding-right:2px}
+.kb-list-head-actions{display:flex;gap:0;flex-shrink:0}
+.kb-list-head-actions button,.kb-list-foot button,.kb-compose-buttons button,.kb-template-picker button,.kb-popover button,.kb-card-edit,.kb-complete{border:0;cursor:pointer;background:transparent;color:inherit}
+.kb-list-head-actions button{width:28px;height:29px;display:grid;place-items:center;border-radius:7px;color:#656070}
+.kb-list-head-actions button:hover,.kb-compose-buttons button:not(.kb-primary):hover,.kb-list-foot button:hover{background:#a68fc62b}
+.kb-card-stack{display:flex;flex-direction:column;gap:7px;padding:0 6px 2px;overflow-y:auto;overflow-x:hidden;min-height:0;scrollbar-color:#bbb0c6 transparent}
+.kb-card{position:relative;min-height:48px;flex:0 0 auto;background:#fff;border:1px solid #dcd8e0;border-radius:9px;box-shadow:0 2px 1px #39234408;cursor:pointer;outline-offset:-1px;overflow:hidden;transition:border-color .14s,box-shadow .14s}
+.kb-card:hover,.kb-card:focus-visible{border-color:#a990ce;box-shadow:0 0 0 2px #b4a0d854}
+.kb-card-cover{display:block;width:100%;height:138px;object-fit:cover}
+.kb-card-cover-color{height:34px;width:100%}.kb-cover-welcome{background:linear-gradient(120deg,#dfcaed,#f4aecd)}.kb-cover-capture{background:linear-gradient(120deg,#e6d094,#f2b1ce)}.kb-cover-shape{background:linear-gradient(120deg,#b6dcc9,#d6c1ed)}
+.kb-card-content{padding:8px 11px 9px}
+.kb-labels{display:flex;align-items:center;flex-wrap:wrap;gap:4px;margin-bottom:5px}
+.kb-labels span{width:41px;height:8px;border-radius:6px;display:inline-block}
+.kb-card-title{display:flex;align-items:flex-start;gap:6px;font-size:13px;line-height:1.45;overflow-wrap:anywhere}
+.kb-card-title>span{flex:1;min-width:0}
+.kb-card.is-complete .kb-card-title>span{text-decoration:line-through;color:#77727e}
+.kb-complete{width:17px;height:17px;border:1.5px solid #847b88;border-radius:50%;display:grid;place-items:center;flex:0 0 17px;margin-top:1px;opacity:0;transition:opacity .1s}
+.kb-card:hover .kb-complete,.kb-card:focus-within .kb-complete,.kb-complete.checked{opacity:1}
+.kb-complete.checked{background:#599775;border-color:#599775;color:white}
+.kb-card-meta{display:flex;flex-wrap:wrap;align-items:center;gap:7px 10px;font-size:11px;color:#615a65;margin-top:8px;min-height:17px}
+.kb-card-meta>span{display:inline-flex;align-items:center;gap:4px;white-space:nowrap}
+.kb-card-meta .kb-due{padding:2px 4px;border-radius:4px}.kb-card-meta .kb-due.overdue{background:#fae0db;color:#a03b48}.kb-card-meta .kb-due.done,.kb-card-meta .kb-checks-done{background:#d8eee2;color:#396a4d;border-radius:4px;padding:2px 4px}
+.kb-avatar{margin-left:auto;height:23px;min-width:23px;border-radius:50%;display:grid!important;place-items:center;background:#c4a4df;color:#3b2355;font-size:9px;font-weight:700;padding:0 4px}
+.kb-card-edit{position:absolute;right:7px;top:7px;opacity:0;width:26px;height:26px;border-radius:7px;background:#fff;box-shadow:0 1px 8px #30203920;display:grid;place-items:center}
+.kb-card:hover .kb-card-edit,.kb-card:focus-within .kb-card-edit{opacity:1}
+.kb-list-foot{display:flex;align-items:center;padding:5px 6px 7px;gap:3px;min-height:37px;flex:0 0 auto}
+.kb-list-foot .kb-add-card{display:flex;gap:6px;align-items:center;flex:1;text-align:left;padding:7px 8px;border-radius:8px;font-size:13px;color:#625c69}
+.kb-list-foot .kb-foot-icon{width:30px;height:30px;border-radius:7px;display:grid;place-items:center}
+.kb-composer{padding:4px 6px 8px}
+.kb-composer textarea,.kb-new-list input{width:100%;background:#fff;border:1px solid #c9bfd4;border-radius:8px;padding:10px 12px;font:inherit;font-size:13px;outline:0;resize:vertical;min-height:62px;box-shadow:0 1px 2px #35274117}
+.kb-composer textarea:focus,.kb-new-list input:focus{border-color:#a68bc6;box-shadow:0 0 0 2px #d8c3f0}
+.kb-compose-buttons{display:flex;align-items:center;gap:7px;margin-top:7px}
+.kb-compose-buttons button{padding:7px 11px;border-radius:7px;font-size:13px}
+.kb-compose-buttons .kb-primary{background:#8067ab;color:#fff;font-weight:650}
+.kb-compose-buttons .kb-primary:hover{background:#6f559d}
+.kb-add-list{flex:0 0 272px;min-height:43px;border:0;background:#8d6fb9bb;border-radius:13px;display:flex;align-items:center;gap:7px;color:white;text-align:left;font-size:13px;font-weight:700;cursor:pointer;padding:11px 14px}
+.kb-add-list:hover{background:#7e5eaf}
+.kb-new-list{flex:0 0 272px;padding:8px;background:#f4f0f7;border:1px solid #ddd2e7;border-radius:12px}
+.kb-new-list input{min-height:36px;padding:8px}
+.kb-collapsed{flex-basis:39px;width:39px;max-height:190px;min-height:150px;display:flex;align-items:center;border-radius:12px}
+.kb-collapsed .kb-list-head{width:39px;min-height:150px;flex-direction:column;align-items:center;padding:8px 4px;cursor:default}
+.kb-collapsed .kb-head-main{writing-mode:vertical-rl;display:flex;align-items:center;justify-content:flex-start;width:100%;gap:7px}
+.kb-collapsed .kb-head-main strong{max-height:95px}.kb-collapsed .kb-count{margin:0}
+.kb-collapsed .kb-list-head-actions{flex-direction:column}.kb-collapsed .kb-list-head-actions button:last-child{display:none}
+.kb-template-picker{margin:0 6px 8px;background:#fff;border:1px solid #e2dbe8;border-radius:8px;padding:6px;max-height:240px;overflow-y:auto}
+.kb-template-picker>div{display:flex;justify-content:space-between;align-items:center;padding:6px;font-size:12px}
+.kb-template-picker>button{width:100%;display:flex;align-items:center;gap:8px;padding:8px;text-align:left;font-size:12px;border-radius:6px;overflow-wrap:anywhere}
+.kb-template-picker>button:hover{background:#f4eef9}.kb-template-picker p{padding:5px 8px;font-size:12px}
+.kb-popover{position:fixed;z-index:1500;width:300px;max-height:min(80vh,710px);overflow-y:auto;background:#fffdfa;border:1px solid #e3d9e8;border-radius:12px;box-shadow:0 18px 58px #2f213c45;padding:8px;color:#35303e}
+.kb-popover-title{display:flex;align-items:center;justify-content:space-between;padding:6px 6px 10px;font-size:13px}
+.kb-popover>button{display:flex;align-items:center;gap:12px;text-align:left;padding:8px 9px;width:100%;min-height:33px;border-radius:6px;font-size:12px}
+.kb-popover>button svg:last-child:not(:first-child){margin-left:auto}
+.kb-popover button:hover:not(:disabled){background:#f0e8f6}
+.kb-popover button:disabled,.kb-list button:disabled{opacity:.45;cursor:not-allowed}
+.kb-menu-divider{height:1px;background:#e8e0eb;margin:7px 0}
+.kb-popover .kb-menu-section{font-weight:650}
+.kb-color-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;padding:8px 3px}
+.kb-color-grid button{height:30px;border:1px solid #0002;border-radius:6px;display:grid;place-items:center}
+.kb-color-grid button.active{outline:2px solid #9475bd;outline-offset:1px}
+.kb-submenu{display:grid;background:#f4f0f6;border-radius:7px;margin:2px 0 6px;padding:5px}
+.kb-submenu button{padding:8px;text-align:left;font-size:12px;border-radius:5px}
+@media (max-width:740px){.kb-list,.kb-new-list,.kb-add-list{flex-basis:258px;width:258px}.kb-board-scroll{padding:9px}.kb-card-cover{height:105px}.kb-popover{width:min(300px,calc(100vw - 20px))}}
+
+.kb-rename-form{display:flex;align-items:center;gap:2px;min-width:0;flex:1}.kb-rename-form input{width:100%;min-width:0;border:1px solid #bba1d5;border-radius:6px;padding:5px;font-size:12px;background:#fff;color:#34303b}.kb-rename-form button{border:0;background:#e6dcf1;border-radius:5px;padding:4px;cursor:pointer}.kb-submenu label{display:flex;flex-direction:column;gap:5px;font-size:11px;padding:5px}.kb-submenu select{font:inherit;border:1px solid #d9cee3;border-radius:6px;padding:7px;background:white;color:#34303b}
+
+.kb-pinned-region::after{content:"";position:absolute;right:5px;top:0;height:min(75vh,720px);width:2px;border-radius:2px;background:#9e80bc;opacity:.8}
+
+/* Separate the pinned lane from the actual scroll container. This fixes the
+   see-through/stacking bug: scrolling lists cannot paint below pinned cards. */
+.kb-board-scroll {
+  display:flex;
+  width:100%;
+  min-width:0;
+  overflow:hidden;
+  gap:0;
+  position:relative;
+  padding:12px 13px 13px;
+  isolation:isolate;
+}
+.kb-pinned-region {
+  flex:0 0 auto;
+  position:relative;
+  z-index:3;
+  display:flex;
+  align-items:flex-start;
+  gap:12px;
+  max-width:58%;
+  min-width:0;
+  overflow-x:auto;
+  overflow-y:hidden;
+  padding:0 14px 10px 0;
+  background:transparent;
+  border-right:2px solid #9a81b9;
+  border-radius:0;
+  box-shadow:8px 0 14px -15px #3b2c4f;
+  scrollbar-width:thin;
+}
+.kb-pinned-region::after{content:none}
+.kb-scrolling-region-scroll {
+  flex:1 1 0;
+  min-width:0;
+  height:100%;
+  overflow-x:auto;
+  overflow-y:hidden;
+  overscroll-behavior-x:contain;
+  scrollbar-width:thin;
+  scrollbar-color:#b9a1cc transparent;
+  cursor:grab;
+  padding-left:12px;
+}
+.kb-scrolling-region-scroll.is-panning{cursor:grabbing;user-select:none}
+.kb-board-scroll:not(.has-pinned-lists) .kb-scrolling-region-scroll{padding-left:0}
+.kb-board-track{display:flex;align-items:flex-start;gap:12px;min-height:100%;min-width:max-content;padding-bottom:12px}
+.kb-scrolling-region{display:flex;align-items:flex-start;gap:12px}
+.kb-scroll-controls{
+  position:absolute;
+  bottom:19px;
+  right:21px;
+  z-index:6;
+  display:flex;
+  gap:3px;
+  padding:4px;
+  border:1px solid rgba(116,86,147,.18);
+  border-radius:12px;
+  background:var(--fw-paper,#fffdfa);
+  box-shadow:0 8px 25px rgba(52,32,64,.12);
+}
+.kb-scroll-controls button{display:grid;place-items:center;background:transparent;color:#6c5981;border:0;width:27px;height:27px;border-radius:8px;cursor:pointer}
+.kb-scroll-controls button:hover:not(:disabled){background:#e6d9f2}
+.kb-scroll-controls button:disabled{opacity:.3;cursor:default}
+.kb-card{touch-action:pan-y;cursor:grab;transition:border-color .16s,box-shadow .16s}
+.kb-card:active{cursor:grabbing}
+.kb-card-is-dragging,.kb-card-is-dragging *{cursor:grabbing!important}
+.kb-card-is-dragging{user-select:none}
+.kb-drag-ghost{
+  position:fixed!important;
+  top:0!important;
+  left:0!important;
+  z-index:3500!important;
+  pointer-events:none!important;
+  margin:0!important;
+  transform-origin:50% 35%;
+  will-change:transform;
+  opacity:.96;
+  box-shadow:0 22px 48px rgba(42,28,58,.29),0 6px 17px rgba(42,28,58,.12)!important;
+  border:1px solid #af91d5!important;
+  cursor:grabbing!important;
+  transition:none!important;
+}
+.kb-drag-ghost .kb-card-edit,.kb-drag-ghost button{pointer-events:none!important}
+.kb-drop-placeholder{
+  width:100%;
+  flex:0 0 auto;
+  border:2px dashed rgba(142,103,184,.6);
+  border-radius:10px;
+  background:rgba(188,157,223,.17);
+  box-shadow:inset 0 0 0 2px rgba(255,255,255,.48);
+  animation:kb-placeholder-in .13s ease-out;
+}
+@keyframes kb-placeholder-in{from{opacity:.4}to{opacity:1}}
+@media (prefers-reduced-motion:reduce){.kb-card,.kb-drop-placeholder{animation:none;transition:none}}
+@media(max-width:740px){.kb-board-scroll{padding:9px}.kb-pinned-region{max-width:54%;padding-right:9px}.kb-scrolling-region-scroll{padding-left:8px}.kb-scroll-controls{right:12px;bottom:14px}}
+
+/* Natural-height lists, as in the original Kanban. Their card count determines
+   the height; long lists still scroll inside their own max-height. */
+.kb-board-scroll,.kb-pinned-region,.kb-board-track,.kb-scrolling-region{align-items:flex-start}
+.kb-list:not(.kb-collapsed){height:auto;min-height:80px;align-self:flex-start;max-height:min(75vh,720px)}
+.kb-list:not(.kb-collapsed) .kb-card-stack{flex:0 1 auto;min-height:0;overflow-y:auto}
+.kb-list:not(.kb-collapsed) .kb-list-foot{margin-top:0}
+.kb-pinned-region{align-self:stretch;border-right:2px solid #9178b4}
+.kb-pinned-region .kb-list,.kb-scrolling-region .kb-list{box-sizing:border-box}
+.kb-color-grid{grid-template-columns:repeat(5,minmax(0,1fr))}
+.kb-color-grid button{position:relative;transition:transform .15s ease,box-shadow .15s ease}
+.kb-color-grid button:hover:not(:disabled){transform:translateY(-2px);box-shadow:0 3px 9px #48315626}
+
+/* More visible pastel list coloring, with a distinct header like Trello. */
+.kb-list:not(.kb-collapsed){background:color-mix(in srgb,var(--kb-list-tint) 28%,#f9f7fa)}
+.kb-list:not(.kb-collapsed) .kb-list-head{background:color-mix(in srgb,var(--kb-list-tint) 36%,#f9f7fa);border-radius:12px 12px 0 0}
